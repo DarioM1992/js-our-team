@@ -8,14 +8,16 @@ const teamMembers = [
 ]
 
 const teamContainer = document.querySelector('.team-container');
-const newMember = document.getElementById('#new-member');
-const newMemberNameInput = querySelector('#name');
-const newMemberRoleInput = querySelector('#role');
-const newMemberImgInput = querySelector('#img');
-const newMemberEmailInput = querySelector('#email');
+const newMemberForm = document.querySelector('#new-member');
 
+const MemberForm = {
+nameInput : newMemberForm.querySelector('#name'),
+roleInput : newMemberForm.querySelector('#role'),
+imgInput : newMemberForm.querySelector('#img'),
+emailInput : newMemberForm.querySelector('#email'),
+};
 
-const teamMemberCardTemple = ({ name, role, img, email }) => `
+const teamMemberCardTemplate = ({ name, role, img, email }) => `
     <div class="team-card">
         <div class="card-image">
             <img src="assets/img/${img}" alt="${name}">
@@ -33,10 +35,27 @@ let html = '' ;
 for (let i = 0 ; i < teamMembers.length; i++) {
     const member = teamMembers[i];
 
-    html += teamMemberCardTemple(member);
+    html += teamMemberCardTemplate(member);
 }
 
 teamContainer.innerHTML = html;
-}
+};
+
+
+const onFormSubmit = event => {
+    event.preventDefault();
+
+    const name = newMemberForm.nameInput.value;
+    const role = newMemberForm.roleInput.value;
+    const img = newMemberForm.imgInput.value;
+    const email = newMemberForm.emailInput.value;
+
+
+    teamMembers.push ({ name, role, img, email});
+};
+
+newMemberForm.addEventListener('submit', onFormSubmit);
+
 
 renderTeam();
+
