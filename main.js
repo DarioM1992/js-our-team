@@ -23,6 +23,7 @@ const teamMemberCardTemple = ({ name, role, img, email }) => `
     </div>
 `;
 
+const renderTeam = () => {
 let html = '' ;
 for (let i = 0 ; i < teamMembers.length; i++) {
     const member = teamMembers[i];
@@ -31,3 +32,6 @@ for (let i = 0 ; i < teamMembers.length; i++) {
 }
 
 teamContainer.innerHTML = html;
+}
+
+renderTeam();
