@@ -10,7 +10,7 @@ const teamMembers = [
 const teamContainer = document.querySelector('.team-container');
 const newMemberForm = document.querySelector('#new-member');
 
-const MemberForm = {
+const memberForm = {
 nameInput : newMemberForm.querySelector('#name'),
 roleInput : newMemberForm.querySelector('#role'),
 imgInput : newMemberForm.querySelector('#img'),
@@ -45,13 +45,14 @@ teamContainer.innerHTML = html;
 const onFormSubmit = event => {
     event.preventDefault();
 
-    const name = newMemberForm.nameInput.value;
-    const role = newMemberForm.roleInput.value;
-    const img = newMemberForm.imgInput.value;
-    const email = newMemberForm.emailInput.value;
+    const name = memberForm.nameInput.value;
+    const role = memberForm.roleInput.value;
+    const img = memberForm.imgInput.value;
+    const email = memberForm.emailInput.value;
 
 
     teamMembers.push ({ name, role, img, email});
+    renderTeam();
 };
 
 newMemberForm.addEventListener('submit', onFormSubmit);
