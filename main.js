@@ -8,6 +8,11 @@ const teamMembers = [
 ]
 
 const teamContainer = document.querySelector('.team-container');
+const newMember = document.getElementById('#new-member');
+const newMemberNameInput = querySelector('#name');
+const newMemberRoleInput = querySelector('#role');
+const newMemberImgInput = querySelector('#img');
+const newMemberEmailInput = querySelector('#email');
 
 
 const teamMemberCardTemple = ({ name, role, img, email }) => `
