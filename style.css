@@ -58,3 +58,13 @@ h3 {
 address {
     color: #08c4f8;
 }
+
+.form-container {
+    max-width: 480px;
+    margin: auto;
+    margin-bottom: 30vh;
+}
+
+.form-container button {
+    margin: auto;
+}
