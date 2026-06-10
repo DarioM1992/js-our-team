@@ -6,3 +6,16 @@ const teamMembers = [
     {name: "Roberto Lorem" ,role: "SEO Specialist", img: "male3.png", email: "robertolorem@team.com"},
     {name: "Daniela Amet" ,role: "Analyst", img: "female3.png", email: "danielaamet@team.com"},
 ]
+
+const teamMemberCardTemple = ({ name, role, image, email }) => `
+    <div class="team-card">
+        <div class="card-image">
+            <img src="assets/img/${image}" alt="${name}">
+        </div>
+        <div class="card-text">
+            <h3>${name}</h3>
+            <p>${role}</p>
+            <address>${email}</address>
+        </div>
+    </div>
+`;
